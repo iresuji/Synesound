@@ -9,7 +9,7 @@ const s3Client = new AWS.S3({
     region: "fra1",
     credentials: {
         accessKeyId: process.env.DO_SPACES_ID,
-        secretAccessKey: process.env.DO_SPACES_SECRET
+        secretAccessKey: process.env.DO_SPACES_SECRET,
     }
 });
 
