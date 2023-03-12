@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css';
+import Link from 'next/link';
 
 
 import { FileUpload } from 'primereact/fileupload';
@@ -29,7 +30,9 @@ export default function Home() {
           </h1>
 
           <FileUpload name="demo" url={'/api/upload'} multiple accept="image/*" maxFileSize={1000000} emptyTemplate={<p className="m-0">Drag and drop files to here to upload.</p>} />
-
+          <h2 className="title">
+            Take <Link href="/posts/player">me there!</Link>
+          </h2>
 
         </div>
 
