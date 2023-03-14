@@ -13,6 +13,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -33,7 +34,7 @@ export default function Home() {
 
 
           <FileUpload name="demo" id='imgfile' url={'/api/upload'} multiple accept="image/*" maxFileSize={1000000} emptyTemplate={<p className="m-0">Drag and drop files to here to upload.</p>} />
-          <h2 className="title">
+          <h2 className=" button title animate-this">
             <Link href="/posts/player">Get synesounded</Link>
           </h2>
 
