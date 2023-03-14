@@ -2,11 +2,16 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css';
 import Link from 'next/link';
+import AppContext from '../appContext';
+import { useState, useContext } from "react";
+
+
 import ImageBanner from '../components/ImageBanner';
 import { FileUpload } from 'primereact/fileupload';
 // import AudioPlayer from '../components/AudioPlayer';
 
 export default function player() {
+    const context = useContext(AppContext)
     return (
         <>
             <Head>
@@ -18,8 +23,7 @@ export default function player() {
             <main className={styles.main}>
                 <div>
 
-                    <canvas id="canvas"></canvas>
-
+                    {context.imgUrl && <img src={context.imgUrl} />}
                 </div>
 
                 <div className={styles.description}>
