@@ -1,22 +1,24 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css';
+import Head from "next/head";
+import { useState, useContext } from "react";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import { FileUpload } from "primereact/fileupload";
 import Link from 'next/link';
-import { spotifyLogin } from "./components/spotifyLogin";
-
-
-import { FileUpload } from 'primereact/fileupload';
-
+import AppContext from "./appContext";
 
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
-
-const inter = Inter({ subsets: ['latin'] })
-
+const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
+  const context = useContext(AppContext)
+  const onUpload = (event) => {
+    console.log(event);
+    const file = event.files[0].name;
+    context.setImgUrl(`https://synesound-image.fra1.cdn.digitaloceanspaces.com/${file}`);
+    // }
+  };
   return (
     <>
       <Head>
@@ -27,20 +29,28 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <h1 className={styles.title}>
-            Welcome to Synesound
-          </h1>
-
-
-
-          <FileUpload name="demo" id='imgfile' url={'/api/upload'} multiple accept="image/*" maxFileSize={1000000} emptyTemplate={<p className="m-0">Drag and drop files to here to upload.</p>} />
-          <h2 className=" button title animate-this">
-            <Link href="/posts/player">Get synesounded</Link>
-          </h2>
-
+          <h1 className={styles.title}>Welcome to Synesound</h1>
+          <FileUpload
+            name="demo"
+            url={"/api/upload"}
+            multiple
+            accept="image/*"
+            maxFileSize={1000000}
+            emptyTemplate={
+              <p className="m-0">Drag and drop files to here to upload.</p>
+            }
+            onUpload={onUpload}
+          />
+          {/* {context.imgUrl && <div><img src={context.imgUrl} /></div>} */}
         </div>
 
+        <div>
+          {/* <AudioPlayer /> */}
+          <h2>
+            <Link href="/posts/player">get</Link>
+          </h2>
+        </div>
       </main>
     </>
-  )
+  );
 }
