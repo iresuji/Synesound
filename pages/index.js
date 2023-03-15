@@ -9,6 +9,7 @@ import AppContext from "./appContext";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import ImgExtractor from "./api/regim"
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
@@ -17,7 +18,11 @@ export default function Home() {
     console.log(event);
     const file = event.files[0].name;
     context.setImgUrl(`https://synesound-image.fra1.cdn.digitaloceanspaces.com/${file}`);
-    // }
+    
+    ImgExtractor(event.files[0]).then((response) => {
+      console.log(response);
+    })
+
   };
   return (
     <>
@@ -35,7 +40,7 @@ export default function Home() {
             url={"/api/upload"}
             multiple
             accept="image/*"
-            maxFileSize={1000000}
+            maxFileSize={10000000}
             emptyTemplate={
               <p className="m-0">Drag and drop files to here to upload.</p>
             }
