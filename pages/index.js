@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import { FileUpload } from "primereact/fileupload";
 import Link from 'next/link';
 import AppContext from "./appContext";
+import SpotifyLogin from "./components/SpotifyLogin";
 
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
@@ -30,6 +31,9 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <h1 className={styles.title}>Welcome to Synesound</h1>
+          <div>
+            <SpotifyLogin />
+          </div>
           <FileUpload
             name="demo"
             url={"/api/upload"}
@@ -45,7 +49,7 @@ export default function Home() {
         </div>
 
         <div>
-          {/* <AudioPlayer /> */}
+
           <h2>
             <Link href="/posts/player">get</Link>
           </h2>

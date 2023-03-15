@@ -31,8 +31,11 @@ export default function player() {
                         Here's your synesound
                     </h1>
                 </div>
+
                 <div>
                     {/* <AudioPlayer /> */}
+                </div>
+                <div>
                     <h2>
                         <Link href="/">Back to home</Link>
                     </h2>
