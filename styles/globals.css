@@ -37,7 +37,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
+        /* --background-start-rgb: 0, 0, 0; */
         --background-end-rgb: 0, 0, 0;
 
         --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
@@ -71,6 +71,9 @@
 
 html,
 body {
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: aliceblue;
     max-width: 100vw;
     overflow-x: hidden;
     
@@ -86,45 +89,6 @@ body {
 a {
     color: inherit;
     text-decoration: none;
-}
-
-.loading-screen {
-    position: relative;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    background-color: #4bedc2;
-    width:0%;
-    height: 100%;
-}
-
-.load-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 10;
-    pointer-events: none;
-}
-
-h1{
-    position: absolute;
-    top: 38%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.button {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.button:hover {
-     color: #4bedc2;
 }
 
 @media (prefers-color-scheme: dark) {
