@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from 'react';
 import { useState, useContext } from "react";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
@@ -6,6 +7,7 @@ import { FileUpload } from "primereact/fileupload";
 import Link from 'next/link';
 import AppContext from "./appContext";
 import SpotifyLogin from "./components/SpotifyLogin";
+import Typewriter from 'typewriter-effect';
 
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
@@ -18,6 +20,7 @@ export default function Home() {
     console.log(event);
     const file = event.files[0].name;
     context.setImgUrl(`https://synesound-image.fra1.cdn.digitaloceanspaces.com/${file}`);
+
     // }
   };
   return (
@@ -29,11 +32,31 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+
+        <h1 className={styles.title}>SyneSound</h1>
+        <h2>
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter.typeString('Hi! :) I am Synesound. Welcome to your new experience')
+                .callFunction(() => {
+                  console.log('String typed out!');
+                })
+                .pauseFor(2500)
+                // .deleteAll()
+                .callFunction(() => {
+                  // console.log('All strings were deleted');
+                })
+                .start();
+            }}
+          />
+        </h2>
+
         <div className={styles.description}>
           <h1 className={styles.title}>Welcome to Synesound</h1>
           <div>
             <SpotifyLogin />
           </div>
+
           <FileUpload
             name="demo"
             url={"/api/upload"}
@@ -51,6 +74,7 @@ export default function Home() {
         <div>
 
           <h2>
+            {/* <AudioPlayer /> */}
             <Link href="/posts/player">get</Link>
           </h2>
         </div>

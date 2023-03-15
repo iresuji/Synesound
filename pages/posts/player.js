@@ -36,9 +36,8 @@ export default function player() {
                     {/* <AudioPlayer /> */}
                 </div>
                 <div>
-                    <h2>
-                        <Link href="/">Back to home</Link>
-                    </h2>
+
+                    <Link href="/">Back to home</Link>
                 </div>
 
             </main>
