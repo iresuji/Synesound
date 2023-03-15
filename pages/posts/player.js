@@ -33,7 +33,7 @@ export default function player() {
                 </div>
                 <div>
                     {/* <AudioPlayer /> */}
-                    <h2>
+                    <h2 className="animate-this">
                         <Link href="/">Back to home</Link>
                     </h2>
                 </div>
