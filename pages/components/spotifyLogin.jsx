@@ -22,6 +22,10 @@ export default SpotifyLogin;
 
 export async function getServerSideProps() {
     const providers = await getProviders();
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
     return {
         props: {

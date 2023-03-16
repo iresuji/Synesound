@@ -9,6 +9,8 @@ import AppContext from "./appContext";
 
 import SpotifyLogin from "./components/SpotifyLogin";
 
+import ImgExtractor from "./api/regim";
+
 
 import Typewriter from 'typewriter-effect';
 
@@ -24,6 +26,9 @@ export default function Home() {
     const file = event.files[0].name;
     context.setImgUrl(`https://synesound-image.fra1.cdn.digitaloceanspaces.com/${file}`);
 
+    ImgExtractor(event.files[0]).then((response) => {
+      console.log(response);
+    })
     // }
   };
   return (
@@ -59,7 +64,7 @@ export default function Home() {
             url={"/api/upload"}
             multiple
             accept="image/*"
-            maxFileSize={1000000}
+            maxFileSize={10000000}
             emptyTemplate={
               <p className="m-0">Drag and drop files to here to upload.</p>
             }
@@ -78,6 +83,7 @@ export default function Home() {
 
 
     </div>
+
   );
 }
 
