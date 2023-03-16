@@ -1,6 +1,5 @@
 // import React, { useEffect } from 'react'
 // import useSonginfo from '@/hooks/useSonginfo';
-import "../../styles/component.module.css";
 
 import { SwitchHorizontalIcon, HeartIcon, VolumeUpIcon as VolumeDownIcon } from "@heroicons/react/outline";
 import { RewindIcon, FastForwardIcon, PauseIcon, PlayIcon, ReplyIcon, VolumeUpIcon, } from "@heroicons/react/solid";

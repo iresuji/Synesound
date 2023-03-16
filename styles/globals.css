@@ -9,8 +9,11 @@
 }   
 
 @layer base{
-    h1, h2, h3, h4, h5, h6{
-        @apply text-white items-center justify-center;
+    h1, h2, h4, h5, h6{
+        @apply text-white align-baseline;
+}
+h3{
+    @apply text-black;
 }
 }
 

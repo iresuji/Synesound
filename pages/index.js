@@ -27,7 +27,7 @@ export default function Home() {
     // }
   };
   return (
-    <div className="bg-black">
+    <div className="bg-gradient-to-b from-black via-purple-300 to-white ...">
       <main>
 
         <h1 className="text-white">SyneSound</h1>
@@ -49,11 +49,11 @@ export default function Home() {
         </h2>
 
         <div>
-          <h1>Start by login on your Spotify</h1>
+          <h2>Start by login on your Spotify</h2>
           <div>
             <SpotifyLogin />
           </div>
-
+          <h2>Upload a picture to get it Synesounded</h2>
           <FileUpload
             name="demo"
             url={"/api/upload"}
@@ -70,9 +70,9 @@ export default function Home() {
 
         <div>
 
-          <h2>
-            <Link href="/posts/player">get</Link>
-          </h2>
+          <h3>
+            <Link href="/posts/player">Click here to get Synesounded</Link>
+          </h3>
         </div>
       </main>
 
