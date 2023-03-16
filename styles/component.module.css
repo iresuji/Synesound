@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -6,11 +6,4 @@
     .button {
         @apply h-5 w-5 cursor-pointer hover: scale-125 transition transform duration-100 ease-out;
     }
-}   
-
-@layer base{
-    h1, h2, h3, h4, h5, h6{
-        @apply text-white items-center justify-center;
-}
-}
-
+} */

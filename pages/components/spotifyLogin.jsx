@@ -1,4 +1,5 @@
 // import { getProviders, signIn } from "next-auth/react";
+import "../../styles/component.module.css";
 
 function SpotifyLogin({ providers }) {
     return (

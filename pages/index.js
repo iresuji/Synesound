@@ -15,7 +15,6 @@ import Typewriter from 'typewriter-effect';
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
-import ImgExtractor from "./api/regim"
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
@@ -25,22 +24,15 @@ export default function Home() {
     const file = event.files[0].name;
     context.setImgUrl(`https://synesound-image.fra1.cdn.digitaloceanspaces.com/${file}`);
 
-    
-    ImgExtractor(event.files[0]).then((response) => {
-      console.log(response);
-    })
-
-
     // }
-
   };
   return (
-    <div className="bg-black h-screen overflow-hidden">
+    <div className="bg-black">
       <main>
 
-        <h1>SyneSound</h1>
+        <h1 className="text-white">SyneSound</h1>
         <h2>
-          <Typewriter
+          <Typewriter className="text-white"
             onInit={(typewriter) => {
               typewriter.typeString('Hi! :) I am Synesound. Welcome to your new experience')
                 .callFunction(() => {
@@ -57,7 +49,7 @@ export default function Home() {
         </h2>
 
         <div>
-          <h1>Welcome to Synesound</h1>
+          <h1>Start by login on your Spotify</h1>
           <div>
             <SpotifyLogin />
           </div>
@@ -67,7 +59,7 @@ export default function Home() {
             url={"/api/upload"}
             multiple
             accept="image/*"
-            maxFileSize={10000000}
+            maxFileSize={1000000}
             emptyTemplate={
               <p className="m-0">Drag and drop files to here to upload.</p>
             }
