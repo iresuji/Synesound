@@ -1,12 +1,12 @@
 import React from 'react'
 
-function spotifyLogin() {
+function SpotifyLogin() {
     return (
         <div>
-            <h1>Spotify Login</h1>
+            <h1>Log on your Spotify below to start</h1>
 
         </div>
     )
-}
+};
 
-export default spotifyLogin
+export default SpotifyLogin;
