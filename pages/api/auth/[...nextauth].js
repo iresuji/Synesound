@@ -5,7 +5,7 @@ import spotifyApi, { LOGIN_URL } from "../../../lib/spotify";
 async function refreshAccessToken(token) {
     try {
 
-        spotyfyApi.setAccessToken(token.accessToken);
+        spotifyApi.setAccessToken(token.accessToken);
         spotifyApi.setRefreshToken(token.refreshToken);
 
         const { body: refreshedToken } = await spotifyApi.refreshAccessToken();
@@ -38,7 +38,7 @@ export default NextAuth({
         }),
         // ...add more providers here
     ],
-    secret: process.env.JWY_SECRET,
+    secret: process.env.JWT_SECRET,
     pages: {
         signIn: '../../components/SpotifyLogin.jsx'
     },

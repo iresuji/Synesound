@@ -9,7 +9,7 @@ export default function player() {
     const context = useContext(AppContext)
     return (
         <>
-            <div className="bg-black" >
+            <div >
                 <main>
                     <div>
 
