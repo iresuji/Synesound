@@ -6,8 +6,8 @@ import AppContext from '../appContext';
 import { useState, useContext } from "react";
 
 
-import ImageBanner from '../components/ImageBanner';
-import { FileUpload } from 'primereact/fileupload';
+// import ImageBanner from '../components/ImageBanner';
+// import { FileUpload } from 'primereact/fileupload';
 // import AudioPlayer from '../components/AudioPlayer';
 
 export default function player() {
