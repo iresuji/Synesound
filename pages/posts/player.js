@@ -1,14 +1,9 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css';
 import Link from 'next/link';
 import AppContext from '../appContext';
 import { useState, useContext } from "react";
-
-
-import ImageBanner from '../components/ImageBanner';
-import { FileUpload } from 'primereact/fileupload';
-// import AudioPlayer from '../components/AudioPlayer';
+import AudioPlayer from '../components/AudioPlayer';
 
 export default function player() {
     const context = useContext(AppContext)
@@ -20,20 +15,20 @@ export default function player() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className={styles.main}>
+            <main>
                 <div>
 
                     {context.imgUrl && <img src={context.imgUrl} />}
                 </div>
 
-                <div className={styles.description}>
-                    <h1 className={styles.title}>
+                <div>
+                    <h1>
                         Here's your synesound
                     </h1>
                 </div>
 
                 <div>
-                    {/* <AudioPlayer /> */}
+                    <AudioPlayer />
                 </div>
                 <div>
 
