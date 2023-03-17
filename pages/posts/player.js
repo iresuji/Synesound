@@ -1,11 +1,9 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
 import Link from 'next/link';
 import AppContext from '../appContext';
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import AudioPlayer from '../components/AudioPlayer';
 
-export default function player() {
+export default function Player() {
     const context = useContext(AppContext)
     return (
         <>

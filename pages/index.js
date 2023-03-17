@@ -1,6 +1,6 @@
-import Head from "next/head";
+// import Head from "next/head";
 import React from 'react';
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { Inter } from "next/font/google";
 import { FileUpload } from "primereact/fileupload";
 import Link from 'next/link';
@@ -71,7 +71,7 @@ export default function Home() {
         <div>
 
           <h3>
-            <Link href="/posts/player">Click here to get Synesounded</Link>
+            <Link href="/posts/Player">Click here to get Synesounded</Link>
           </h3>
         </div>
       </main>
