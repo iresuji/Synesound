@@ -7,8 +7,6 @@ import Link from 'next/link';
 
 import AppContext from "./appContext";
 
-import SpotifyLogin from "./components/SpotifyLogin";
-
 import ImgExtractor from "./api/regim";
 
 
@@ -54,10 +52,7 @@ export default function Home() {
         </h2>
 
         <div>
-          <h2>Start by login on your Spotify</h2>
-          <div>
-            <SpotifyLogin />
-          </div>
+          <Link href="/login">Click here to get Synesounded</Link>
           <h2>Upload a picture to get it Synesounded</h2>
           <FileUpload
             name="demo"
