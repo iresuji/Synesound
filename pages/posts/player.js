@@ -1,10 +1,14 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import AppContext from '../appContext';
 import { useContext } from "react";
 import AudioPlayer from '../components/AudioPlayer';
+import { useRouter } from 'next/router';
+
 
 export default function Player() {
     const context = useContext(AppContext)
+    const router = useRouter()
+
     return (
         <>
             <div className="bg-black" >
@@ -25,7 +29,11 @@ export default function Player() {
                     </div>
                     <div>
                         <h3>
-                            <Link className='text-white' href="/">Back to home</Link>
+                            <button type="button" onClick={() => router.replace('/')}>
+                                Back home
+                            </button>
+
+                            {/* <Link className='text-white' href="/">Back to home</Link> */}
 
                         </h3>
 

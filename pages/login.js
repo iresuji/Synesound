@@ -1,6 +1,7 @@
 import { getProviders, signIn } from "next-auth/react";
 import React from 'react';
 
+
 function login({ providers }) {
     return (
         <div className="flex flex-col items-center bg-black min-h-screen w-full justify-center">
@@ -20,10 +21,12 @@ export default login;
 
 export async function getServerSideProps() {
     const providers = await getProviders();
+    const data = `Data from server: ${Date.now()}`;
 
     return {
         props: {
             providers,
+            initialData: data,
         },
     }
 }
