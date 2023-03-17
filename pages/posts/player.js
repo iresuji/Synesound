@@ -5,8 +5,13 @@ import AppContext from '../appContext';
 import { useState, useContext } from "react";
 import AudioPlayer from '../components/AudioPlayer';
 
+
+
 export default function player() {
     const context = useContext(AppContext)
+
+    const colors = context.colors
+
     return (
         <>
             <div className="bg-black" >

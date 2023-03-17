@@ -5,6 +5,7 @@ import AppContext from "./appContext";
 
 export default function App({ Component, pageProps }) {
   const [imgUrl, setImgUrl] = useState("");
+  const [color, setColor] = useState([]);
 
-  return (<AppContext.Provider value={{ imgUrl, setImgUrl }}><Component {...pageProps} /></AppContext.Provider>)
+  return (<AppContext.Provider value={{ imgUrl, setImgUrl, color, setColor }}><Component {...pageProps} /></AppContext.Provider>)
 }
