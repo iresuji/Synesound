@@ -1,16 +1,18 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import Link from 'next/link';
-import AppContext from '../appContext';
-import { useState, useContext } from "react";
+// import Link from 'next/link';
+import AppContext from '../../appContext';
+import { useContext } from "react";
 import AudioPlayer from '../components/AudioPlayer';
+import { useRouter } from 'next/router';
 
 
 
-export default function player() {
+
+
+export default function Player() {
     const context = useContext(AppContext)
-
     const colors = context.colors
+
+    const router = useRouter()
 
     return (
         <>
@@ -32,7 +34,11 @@ export default function player() {
                     </div>
                     <div>
                         <h3>
-                            <Link className='text-white' href="/">Back to home</Link>
+                            <button type="button" onClick={() => router.replace('/')}>
+                                Back home
+                            </button>
+
+                            {/* <Link className='text-white' href="/">Back to home</Link> */}
 
                         </h3>
 

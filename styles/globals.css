@@ -4,9 +4,13 @@
 
 /* @layer components {
     .button {
-        @apply h-5 w-5 cursor-pointer hover: scale-125 transition transform duration-100 ease-out;
+        @apply h-5 w-5 cursor-pointer transition transform duration-100 ease-out;
     }
+<<<<<<< HEAD
 }    */
+=======
+}
+>>>>>>> 4b097a5c4f483ae7c00b8eccc970eb3d7a0f5d1d
 
 @layer base {
 

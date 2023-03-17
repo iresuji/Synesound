@@ -1,13 +1,12 @@
-import Head from "next/head";
+// import Head from "next/head";
 import React from 'react';
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { Inter } from "next/font/google";
 import { FileUpload } from "primereact/fileupload";
-import Link from 'next/link';
+// import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import AppContext from "./appContext";
-
-import SpotifyLogin from "./components/SpotifyLogin";
+import AppContext from "../appContext";
 
 import ImgExtractor from "./api/regim";
 
@@ -33,7 +32,9 @@ export default function Home() {
     })
     // }
   };
+  const router = useRouter()
   return (
+
     <div className="bg-gradient-to-b from-black via-purple-300 to-white ...">
       <main>
 
@@ -56,10 +57,10 @@ export default function Home() {
         </h2>
 
         <div>
-          <h2>Start by login on your Spotify</h2>
-          <div>
-            <SpotifyLogin />
-          </div>
+          <button type="button" onClick={() => router.replace('/login')}>
+            Click here to get Synesounded
+          </button>
+          {/* <Link href="/login">Click here to get Synesounded</Link> */}
           <h2>Upload a picture to get it Synesounded</h2>
           <FileUpload
             name="demo"
@@ -78,7 +79,10 @@ export default function Home() {
         <div>
 
           <h3>
-            <Link href="/posts/player">Click here to get Synesounded</Link>
+            <button type="button" onClick={() => router.replace('/posts/Player')}>
+              Click here to get Synesounded
+            </button>
+            {/* <Link href="/posts/Player">Click here to get Synesounded</Link> */}
           </h3>
         </div>
       </main>
