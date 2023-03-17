@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import '@/styles/globals.css';
-import AppContext from "./appContext";
+import AppContext from "../appContext";
 
 
 export default function App({ Component, pageProps }) {

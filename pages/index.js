@@ -6,7 +6,7 @@ import { FileUpload } from "primereact/fileupload";
 // import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import AppContext from "./appContext";
+import AppContext from "../appContext";
 
 import ImgExtractor from "./api/regim";
 

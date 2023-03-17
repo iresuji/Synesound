@@ -1,5 +1,5 @@
 // import Link from 'next/link';
-import AppContext from '../appContext';
+import AppContext from '../../appContext';
 import { useContext } from "react";
 import AudioPlayer from '../components/AudioPlayer';
 import { useRouter } from 'next/router';
