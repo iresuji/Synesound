@@ -6,6 +6,8 @@ import { FileUpload } from "primereact/fileupload";
 // import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import { signOut, useSession } from 'next-auth/react';
+
 import AppContext from "../appContext";
 
 import ImgExtractor from "./api/regim";
@@ -18,10 +20,19 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+
 export default function Home() {
+
+  // check session login on the console
+  const { data: session, status } = useSession();
+  console.log(session);
+
+
   const context = useContext(AppContext)
   const onUpload = (event) => {
     console.log(event);
+
     const file = event.files[0].name;
     context.setImgUrl(`https://synesound-image.fra1.cdn.digitaloceanspaces.com/${file}`);
 
@@ -33,7 +44,7 @@ export default function Home() {
   const router = useRouter()
   return (
 
-    <div className="bg-gradient-to-b from-black via-purple-300 to-white ...">
+    <div className="flex flex-col items-center min-h-screen w-full justify-center bg-gradient-to-b from-black via-purple-300 to-white ...">
       <main>
 
         <h1 className="text-white">SyneSound</h1>
@@ -56,7 +67,7 @@ export default function Home() {
 
         <div>
           <button type="button" onClick={() => router.replace('/login')}>
-            Click here to get Synesounded
+            Click her to login to your Spotify first
           </button>
           {/* <Link href="/login">Click here to get Synesounded</Link> */}
           <h2>Upload a picture to get it Synesounded</h2>
