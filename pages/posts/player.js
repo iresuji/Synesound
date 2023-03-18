@@ -8,10 +8,15 @@ import { ChevronDownIcon } from '@heroicons/react/outline';
 
 
 
+
+
+
 export default function Player() {
     const { data: session } = useSession();
 
     const context = useContext(AppContext)
+    const colors = context.colors
+
     const router = useRouter()
 
     return (
