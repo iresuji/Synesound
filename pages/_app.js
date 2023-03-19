@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import '@/styles/globals.css';
 import AppContext from "../appContext";
 import { SessionProvider } from "next-auth/react";
+import { RecoilRoot } from "recoil";
 
 
 export default function App({ Component, pageProps: { session, ...pageProps } }) {
@@ -15,7 +16,9 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
   return (
 
     <SessionProvider>
-      <AppContext.Provider value={value} initialData={pageProps?.initialData} ><Component {...pageProps} /></AppContext.Provider>)
+      <RecoilRoot>
+        <AppContext.Provider value={value} initialData={pageProps?.initialData} ><Component {...pageProps} /></AppContext.Provider>)
+      </RecoilRoot>
 
     </SessionProvider>
   )

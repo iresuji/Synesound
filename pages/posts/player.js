@@ -20,7 +20,7 @@ export default function Player() {
 
     return (
 
-        <div className="bg-black" >
+        <div className="flex flex-col items-center min-h-screen w-full justify-center bg-gradient-to-b from-black via-purple-300 to-white ..." >
             <header className='absolute top-5 right-8'>
                 <div className='flex items-center bg-black space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2'>
                     <img className='"rounded-full w-10 h-10' src={session?.user.image} alt="" />
@@ -31,14 +31,14 @@ export default function Player() {
 
             <main>
                 <div>
-
-                    {context.imgUrl && <img src={context.imgUrl} />}
-                </div>
-
-                <div>
                     <h1>
                         Here's your synesound
                     </h1>
+                </div>
+
+                <div className='flex w-full'>
+
+                    {context.imgUrl && <img src={context.imgUrl} />}
                 </div>
 
                 <div>
