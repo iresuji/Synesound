@@ -90,7 +90,7 @@ export default function Home() {
         <div>
 
           <h3>
-            <button type="button" onClick={() => router.replace('/posts/Player')}>
+            <button type="button" onClick={() => router.replace('/posts/player')}>
               Click here to get Synesounded
             </button>
             {/* <Link href="/posts/Player">Click here to get Synesounded</Link> */}
