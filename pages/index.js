@@ -27,8 +27,6 @@ export default function Home() {
 
     ImgExtractor(event.files[0]).then((response) => {
       console.log(response);
-
-      context.setColor(response.data.colors);
     })
     // }
   };

@@ -5,13 +5,8 @@ import AudioPlayer from '../components/AudioPlayer';
 import { useRouter } from 'next/router';
 
 
-
-
-
 export default function Player() {
     const context = useContext(AppContext)
-    const colors = context.colors
-
     const router = useRouter()
 
     return (
