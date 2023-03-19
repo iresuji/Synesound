@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import useSonginfo from '@/hooks/useSonginfo';
-import useSpotify from '@/hooks/useSpotify';
+// import useSonginfo from '@/hooks/useSonginfo';
+// import useSpotify from '@/hooks/useSpotify';
 import { useSession } from 'next-auth/react';
 
 import { SwitchHorizontalIcon, HeartIcon, VolumeUpIcon as VolumeDownIcon } from "@heroicons/react/outline";
