@@ -6,7 +6,7 @@ import { FileUpload } from "primereact/fileupload";
 // import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { signOut, useSession } from 'next-auth/react';
+import { getSession, signOut, useSession } from 'next-auth/react';
 
 import AppContext from "../appContext";
 
@@ -46,7 +46,7 @@ export default function Home() {
   const router = useRouter()
   return (
 
-    <div className="flex flex-col items-center min-h-screen w-full justify-center bg-gradient-to-b from-black via-purple-300 to-white ...">
+    <div className="flex flex-col items-center min-h-screen w-full justify-center bg-black">
       <main>
 
         <h1 className="text-white">SyneSound</h1>
@@ -104,3 +104,13 @@ export default function Home() {
   );
 }
 
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  return {
+    props: {
+      session,
+    }
+  }
+
+}

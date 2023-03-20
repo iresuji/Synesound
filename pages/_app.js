@@ -17,7 +17,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
 
     <SessionProvider>
       <RecoilRoot>
-        <AppContext.Provider value={value} initialData={pageProps?.initialData} ><Component {...pageProps} /></AppContext.Provider>)
+        <AppContext.Provider value={value} initialData={pageProps?.initialData} ><Component {...pageProps} /></AppContext.Provider>
       </RecoilRoot>
 
     </SessionProvider>

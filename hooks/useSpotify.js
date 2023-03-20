@@ -3,7 +3,6 @@ import { signIn, useSession } from 'next-auth/react';
 import React, { useEffect } from 'react';
 
 
-
 function useSpotify() {
     const { data: session } = useSession();
     useEffect(() => {
@@ -20,3 +19,4 @@ function useSpotify() {
 }
 
 export default useSpotify;
+
