@@ -46,7 +46,7 @@ export default function Home() {
         <div className='container mx-auto '>
           <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'></div>
           <div className='flex-1 text-center font-secondary lg:text-center'>
-            <h1 className="text-white ">SyneSound</h1>
+            <h1 className="text-white text-6xl pb-20 pt-20 ">SyneSound</h1>
             <div className='mb-6 text-[14px] lg:text-[24px]
            font-semibold'>
               <h2>
@@ -66,11 +66,16 @@ export default function Home() {
                 />
               </h2>
             </div>
-            <button type="button" onClick={() => router.replace('/login')}>
-              Click her to login to your Spotify first
-            </button>
+            <div className='pt-10'>
+              <button className="bg-black text-white border p-2 shadow-inner rounded opacity-50 hover:opacity-100" type="button" onClick={() => router.replace('/login')}>
+                Start here
+              </button>
+
+
+            </div>
             {/* <Link href="/login">Click here to get Synesounded</Link> */}
-            <h2>Upload a picture to get it Synesounded</h2>            <div className='lg:bottom-8 w-full overflow-hidden z-50'>
+
+            <div className='lg:bottom-8 w-full overflow-hidden z-50'>
               <div className='h-[370px] max-w-[500px] mx-auto px-6 flex justify-between items-center' >
                 <FileUpload
                   name="demo"
@@ -79,7 +84,7 @@ export default function Home() {
                   accept="image/*"
                   maxFileSize={10000000}
                   emptyTemplate={
-                    <p className="m-0 flex items-center justify-center">Drag and drop files to here to upload.</p>
+                    <p className="m-0 flex items-center justify-center text-black">Upload a picture to get it Synesounded</p>
                   }
                   onUpload={onUpload}
                 />
@@ -90,9 +95,9 @@ export default function Home() {
         </div>
       </section>
       <h3 className="flex-1 text-center font-secondary lg:text-center">
-        <button type="button" onClick={() => router.replace('/posts/player')} disabled={!isButtonEnabled}>
+        <button className="bg-black text-white border p-2 shadow-inner rounded opacity-50 hover:opacity-100" type="button" onClick={() => router.replace('/posts/player')} disabled={!isButtonEnabled}>
 
-          Click here to get Synesounded
+          Take me there
         </button>
 
       </h3>

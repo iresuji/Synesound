@@ -192,19 +192,15 @@ export default function Player() {
                             <div>
                                 <AudioPlayer />
                             </div>
-                            <div className="detailed-information">
-                                <div className="container">
-                                    <div className="row">
-                                        <h2 className="title">
-                                            The insiration behind SyneSound and <br /> what it
-                                            means.
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </motion.div>
                 </AnimatePresence>
+                <div className="flex items-center space-x-2 hover:text-white">
+                    <h2 >
+                        SyneSound takes the user on a synesthetic journey of stimulation and connection through audivisual cues.
+                    </h2>
+                </div>
+
                 <div className="h-[55vh]"></div>
                 <div>
                     <button
