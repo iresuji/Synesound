@@ -73,6 +73,7 @@ export default function Home() {
           </button>
           {/* <Link href="/login">Click here to get Synesounded</Link> */}
           <h2>Upload a picture to get it Synesounded</h2>
+
           <FileUpload
             name="demo"
             url={"/api/upload"}
@@ -84,6 +85,9 @@ export default function Home() {
             }
             onUpload={onUpload}
           />
+
+
+
           {/* {context.imgUrl && <div><img src={context.imgUrl} /></div>} */}
         </div>
 

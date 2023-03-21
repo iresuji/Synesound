@@ -13,10 +13,11 @@ const colors = [
     "from-blue-500",
     "from-green-500",
     "from-yellow-500",
-    "from.red-500",
+    "from-red-500",
     "from-pink-500",
-    "from.purple-500",
+    "from-purple-500",
 ]
+
 
 
 
@@ -54,7 +55,7 @@ export default function Player() {
                     </h1>
                 </div> */}
 
-                <div className='flex w-full'>
+                <div className='flex items-center justify-evenly'>
 
                     {context.imgUrl && <img src={context.imgUrl} />}
                 </div>
@@ -62,12 +63,12 @@ export default function Player() {
                 <div>
                     <AudioPlayer />
                 </div>
-                <div>
+                {/* <div>
                     <button className=" flex items-center space-x-2 hover:text-white" onClick={() => signOut()}>
                         <p>Logout from Spotify</p>
                     </button>
 
-                </div>
+                </div> */}
                 <div>
                     <h3>
                         <button type="button" onClick={() => router.replace('/')}>

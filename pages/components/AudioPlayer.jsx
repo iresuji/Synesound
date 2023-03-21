@@ -20,6 +20,26 @@ function Player() {
 
     const songInfo = useSongInfo();
 
+    const skipToNextTrack = () => {
+        spotifyApi.skipToNext()
+            .then(function () {
+                console.log('Skip to next');
+            }, function (err) {
+                //if the user making the request is non-premium, a 403 FORBIDDEN response code will be returned
+                console.log('Something went wrong!', err);
+            });
+    }
+
+    const skipToPrevious = () => {
+        spotifyApi.skipToPrevious()
+            .then(function () {
+                console.log('Skip to previous');
+            }, function (err) {
+                //if the user making the request is non-premium, a 403 FORBIDDEN response code will be returned
+                console.log('Something went wrong!', err);
+            });
+    }
+
     const fetchCurrentSong = () => {
         if (!songInfo) {
             spotifyApi.getMyCurrentPlayingTrack().then(data => {
@@ -44,6 +64,7 @@ function Player() {
             }
         });
     };
+
 
     useEffect(() => {
         if (spotifyApi.getAccessToken() && !currentTrackId) {
@@ -79,7 +100,7 @@ function Player() {
             {/* Center */}
             <div className='flex items-center justify-evenly'>
                 <SwitchHorizontalIcon className='button' />
-                <RewindIcon className='button' />
+                <RewindIcon onClick={skipToPrevious} className='button' />
                 {/* onClick={() => spotifyApi.skipToPrevious()}  not working*/}
                 {isPlaying ? (
                     <PauseIcon onClick={handlePlayPause} className='button w-10 h-10' />
@@ -87,7 +108,7 @@ function Player() {
                     <PlayIcon onClick={handlePlayPause} className='button w-10 h-10' />
                 )}
 
-                <FastForwardIcon className='button' />
+                <FastForwardIcon onClick={skipToNextTrack} className='button' />
                 <ReplyIcon className='button' />
             </div>
 
