@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 import { useContext } from "react";
 import { Inter } from "next/font/google";
 import { FileUpload } from "primereact/fileupload";
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import SpotifyLogin from "./components/SpotifyLogin";
 import { getSession, signOut, useSession } from 'next-auth/react';
 import AppContext from "../appContext";
 import ImgExtractor from "./api/regim";
@@ -38,69 +36,68 @@ export default function Home() {
     })
     // }
 
-    
+
   };
+
+  const router = useRouter()
   return (
-
-      <main className="bg-gradient-to-b from-black via-purple-300">
-       <section className='min-h-[85vh] lg:min-h-[78vh] flex items-center' id='home'>
-        <div className='container mx-auto '>   
-            <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'></div>
-            <div className='flex-1 text-center font-secondary lg:text-center'>
-         <h1 className="text-white ">SyneSound</h1>
-          <div className='mb-6 text-[14px] lg:text-[24px]
+    <main className="bg-black">
+      <section className='min-h-[85vh] lg:min-h-[78vh] flex items-center' id='home'>
+        <div className='container mx-auto '>
+          <div className='flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'></div>
+          <div className='flex-1 text-center font-secondary lg:text-center'>
+            <h1 className="text-white ">SyneSound</h1>
+            <div className='mb-6 text-[14px] lg:text-[24px]
            font-semibold'>
-           <h2>
-             <Typewriter className="text-white"
-               onInit={(typewriter) => {
-                 typewriter.typeString('Hi! :) I am Synesound. Welcome to your new experience')
-                   .callFunction(() => {
-                     console.log('String typed out!');
-                   })
-                   .pauseFor(2500)
-                   // .deleteAll()
-                   .callFunction(() => {
-                     // console.log('All strings were deleted');
-                   })
-                   .start();
-               }}
-             />
-           </h2>
+              <h2>
+                <Typewriter className="text-white"
+                  onInit={(typewriter) => {
+                    typewriter.typeString('Hi! :) I am Synesound. Welcome to your new experience')
+                      .callFunction(() => {
+                        console.log('String typed out!');
+                      })
+                      .pauseFor(2500)
+                      // .deleteAll()
+                      .callFunction(() => {
+                        // console.log('All strings were deleted');
+                      })
+                      .start();
+                  }}
+                />
+              </h2>
+            </div>
+            <button type="button" onClick={() => router.replace('/login')}>
+              Click her to login to your Spotify first
+            </button>
+            {/* <Link href="/login">Click here to get Synesounded</Link> */}
+            <h2>Upload a picture to get it Synesounded</h2>            <div className='lg:bottom-8 w-full overflow-hidden z-50'>
+              <div className='h-[370px] max-w-[500px] mx-auto px-6 flex justify-between items-center' >
+                <FileUpload
+                  name="demo"
+                  url={"/api/upload"}
+                  multiple
+                  accept="image/*"
+                  maxFileSize={10000000}
+                  emptyTemplate={
+                    <p className="m-0 flex items-center justify-center">Drag and drop files to here to upload.</p>
+                  }
+                  onUpload={onUpload}
+                />
+                {/* {context.imgUrl && <div><img src={context.imgUrl} /></div>} */}
+              </div>
+            </div>
           </div>
-          
-          <h2>Start by login on your Spotify</h2>
-        
-        <div className='lg:bottom-8 w-full overflow-hidden z-50'>    
-          
-          <div className='h-[370px] max-w-[500px] mx-auto px-6 flex justify-between items-center' >
-          <FileUpload 
-
-            name="demo"
-            url={"/api/upload"}
-            multiple
-            accept="image/*"
-            maxFileSize={10000000}
-            emptyTemplate={
-              <p className="m-0 flex items-center justify-center">Drag and drop files to here to upload.</p>
-            }
-            onUpload={onUpload}
-          />
-
-          {/* {context.imgUrl && <div><img src={context.imgUrl} /></div>} */}
         </div>
+      </section>
+      <h3 className="flex-1 text-center font-secondary lg:text-center">
+        <button type="button" onClick={() => router.replace('/posts/player')} disabled={!isButtonEnabled}>
 
-        <div>
+          Click here to get Synesounded
+        </button>
 
-          <h3>
-            <button type="button" onClick={() => router.replace('/posts/player')} disabled={!isButtonEnabled}>
-
-              Click here to get Synesounded
-            </Link>
-          </h3>
-     <div className='h-[55vh]'></div>
-      </main>
-      
-
+      </h3>
+      <div className='h-[55vh]'></div>
+    </main>
   );
 }
 
