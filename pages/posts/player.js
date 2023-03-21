@@ -6,19 +6,12 @@ import { useRouter } from 'next/router';
 import { signOut, useSession } from 'next-auth/react';
 import { ChevronDownIcon } from '@heroicons/react/outline';
 import { shuffle } from "lodash";
+
 import {AnimatePresence} from 'framer-motion';
 import {motion, useTransform, useScroll} from 'framer-motion';
 
+import ntc from '@/lib/ntc';
 
-const colors = [
-    "from-indigo-500",
-    "from-blue-500",
-    "from-green-500",
-    "from-yellow-500",
-    "from-red-500",
-    "from-pink-500",
-    "from-purple-500",
-]
 
 const transition ={duration: 1.5, ease: [0.6, 0.01, -0.05, 0.9]}; //easing animation
 
@@ -63,10 +56,20 @@ const letter = {
 
 export default function Player() {
     const { data: session } = useSession();
+    const context = useContext(AppContext);
+
     const [color, setColor] = useState(null);
 
+    const [gradient, setGradient] = useState('linear-gradient(to bottom, #000000, #000000');
+
     useEffect(() => {
-        setColor(shuffle(colors).pop());
+        const colors = JSON.parse(localStorage.getItem('colors') || '[]');
+        if (colors.length > 0) {
+            const color = shuffle(colors).pop();
+            setGradient(`linear-gradient(to bottom, ${color}, #000000`);
+        }
+        console.log(colors);
+        // setColor(shuffle(colors).pop());
     }, []);
 
     const window = 1500
@@ -81,14 +84,12 @@ export default function Player() {
 
 
 
-    const context = useContext(AppContext);
 
     const router = useRouter();
 
     return (
-      <div
-        className={`flex space-x-7 bg-gradient-to-b to-black ${color} min-h-screen text-white padding-8 `}
-      >
+
+      <div className={`flex space-x-7  min-h-screen text-white padding-8 `} style={{ backgroundImage: gradient }} >
         <header className="absolute top-5 right-8 z-10">
           <div
             className="flex items-center bg-black space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2 text-white"
@@ -229,5 +230,8 @@ export default function Player() {
     );
 }
 
+
+            </div>
+        </>
 
 
