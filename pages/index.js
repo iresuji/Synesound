@@ -4,8 +4,6 @@ import { useContext } from "react";
 import { Inter } from "next/font/google";
 import { FileUpload } from "primereact/fileupload";
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import SpotifyLogin from "./components/SpotifyLogin";
 import { getSession, signOut, useSession } from 'next-auth/react';
 import AppContext from "../appContext";
 import ImgExtractor from "./api/regim";

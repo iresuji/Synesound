@@ -166,7 +166,7 @@ export default function Player() {
                       animate={{
                         y: 0,
                         width: "100%",
-                        height: window.innerWidth > 1440 ? 400 : 800,
+                        height: window.innerWidth > 1440 ? 400 : 400,
                         transition: { delay: 0.2, ...transition },
                       }}
                     >
@@ -178,7 +178,7 @@ export default function Player() {
                               initial={{ scale: 1 }}
                               animate={{
                                 transition: { delay: 0.2, ...transition },
-                                y: window.innerWidth > 1440 ? -300 : -300,
+                                y: window.innerWidth > 1440 ? -400 : -200,
                               }}
                               src={context.imgUrl}
                             />
@@ -189,7 +189,7 @@ export default function Player() {
                   </div>
                 </div>
 
-                <div>
+                <div className="m-8">
                   <AudioPlayer />
                 </div>
 
@@ -197,7 +197,7 @@ export default function Player() {
                   <div className="container">
                     <div className="row">
                       <h2 className="title">
-                        The insiration behind SyneSound and <br /> what it
+                        The inspiration behind SyneSound and <br /> what it
                         means.
                       </h2>
                     </div>
@@ -206,23 +206,23 @@ export default function Player() {
               </div>
             </motion.div>
           </AnimatePresence>
-          <div className="h-[55vh]"></div>
-          <div>
+          <div className="h-[25vh]"></div>
+          <div className="fixed bottom-2 lg:bottom-8 flex justify-between items-center left-0 w-full bg-black/20 h-[59px] backdrop-blur-2x1 text-[18px] z-50">
             <button
-              className=" flex items-center space-x-2 hover:text-white"
+              className="w-[260px] 
+          px-10 flex justify-center item-center text-[18px] hover:text-white"
               onClick={() => signOut()}
             >
               <p>Logout from Spotify</p>
             </button>
-          </div>
-          <div>
-            <h3>
-              <button type="button" onClick={() => router.replace("/")}>
-                Back home
-              </button>
-
-              {/* <Link className='text-white' href="/">Back to home</Link> */}
-            </h3>
+            <button
+              className="w-[160px] 
+          px-0 flex justify-center item-center text-[18px] hover:text-white"
+              type="button"
+              onClick={() => router.replace("/")}
+            >
+              Back home
+            </button>
           </div>
         </main>
       </div>
