@@ -60,8 +60,7 @@ export default function Home() {
         
         <div className='lg:bottom-8 w-full overflow-hidden z-50'>    
           
-          <div className='w-full bg-black/20 h-[230px] backdrop-blur-2x1 
-            max-w-[500px] mx-auto px-6 flex justify-between items-center' >
+          <div className='h-[370px] max-w-[500px] mx-auto px-6 flex justify-between items-center' >
           <FileUpload 
             name="demo"
             url={"/api/upload"}

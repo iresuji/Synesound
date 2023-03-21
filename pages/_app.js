@@ -9,6 +9,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
   const [imgUrl, setImgUrl] = useState("");
   const [color, setColor] = useState([]);
   const value = useMemo(() => ({ imgUrl, setImgUrl }), [imgUrl]);
+  
   // return (<AppContext.Provider value={{ imgUrl, setImgUrl, color, setColor }}><Component {...pageProps} /></AppContext.Provider>)
 
 
