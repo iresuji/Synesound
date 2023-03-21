@@ -59,9 +59,7 @@ export default function Home() {
           <h2>Start by login on your Spotify</h2>
         
         <div className='lg:bottom-8 w-full overflow-hidden z-50'>    
-          <div className='w-full h-[76px] max-w-[460px] mx-auto px-40'>
-            <SpotifyLogin />
-          </div>
+          
           <div className='w-full bg-black/20 h-[230px] backdrop-blur-2x1 
             max-w-[500px] mx-auto px-6 flex justify-between items-center' >
           <FileUpload 
