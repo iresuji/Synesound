@@ -5,11 +5,13 @@ import { SessionProvider } from "next-auth/react";
 import { RecoilRoot } from "recoil";
 
 
+
 export default function App({ Component, pageProps: { session, ...pageProps } }) {
   const [imgUrl, setImgUrl] = useState("");
   const [color, setColor] = useState([]);
-  const value = useMemo(() => ({ imgUrl, setImgUrl }), [imgUrl]);
-  
+
+  const value = useMemo(() => ({ imgUrl, setImgUrl, color, setColor }), [imgUrl]);
+
   // return (<AppContext.Provider value={{ imgUrl, setImgUrl, color, setColor }}><Component {...pageProps} /></AppContext.Provider>)
 
 
