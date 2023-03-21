@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 
-const API_KEY = '68ca58338cmsh0e5547f05cd1b4bp1fa33djsn973d3db4137f';
+const API_KEY = '4174cde316msh578ce45deeff84dp1ef6c0jsnbf3f89d40f11';
 const API_HOST = 'regim3.p.rapidapi.com';
 
 export default async function ImgExtractor(file) {

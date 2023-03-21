@@ -1,5 +1,5 @@
 // import Head from "next/head";
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from "react";
 import { Inter } from "next/font/google";
 import { FileUpload } from "primereact/fileupload";
@@ -18,12 +18,13 @@ import Typewriter from 'typewriter-effect';
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import { set } from 'lodash';
 
 const inter = Inter({ subsets: ["latin"] });
 
 
 export default function Home() {
-
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   // check session login on the console
   const { data: session, status } = useSession();
   console.log(session);
@@ -39,7 +40,8 @@ export default function Home() {
     ImgExtractor(event.files[0]).then((response) => {
       console.log(response);
 
-      // context.setColor(response.data.colors);
+      localStorage.setItem('colors', JSON.stringify(response.data.colors));
+      setIsButtonEnabled(true);
     })
     // }
   };
@@ -94,7 +96,7 @@ export default function Home() {
         <div>
 
           <h3>
-            <button type="button" onClick={() => router.replace('/posts/player')}>
+            <button type="button" onClick={() => router.replace('/posts/player')} disabled={!isButtonEnabled}>
               Click here to get Synesounded
             </button>
             {/* <Link href="/posts/Player">Click here to get Synesounded</Link> */}
