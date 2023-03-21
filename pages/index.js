@@ -1,17 +1,15 @@
-import Head from "next/head";
+// import Head from "next/head";
 import React from 'react';
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { Inter } from "next/font/google";
 import { FileUpload } from "primereact/fileupload";
 import Link from 'next/link';
-import AppContext from "./appContext";
+import { useRouter } from 'next/router';
 import SpotifyLogin from "./components/SpotifyLogin";
-
+import { getSession, signOut, useSession } from 'next-auth/react';
+import AppContext from "../appContext";
 import ImgExtractor from "./api/regim";
-
-
 import Typewriter from 'typewriter-effect';
-
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
@@ -98,3 +96,13 @@ export default function Home() {
 
 
 
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  return {
+    props: {
+      session,
+    }
+  }
+
+}
