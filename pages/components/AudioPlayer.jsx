@@ -8,6 +8,7 @@ import { debounce } from 'lodash';
 import { useSession } from 'next-auth/react';
 import React, { useCallback, useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil';
+import ImgExtractor from '../api/regim';
 
 function Player() {
     const spotifyApi = useSpotify();
@@ -91,7 +92,7 @@ function Player() {
         <div className='h-24  text-white grid grid-cols-3 text-xs md:text-base px-2 md:px-8'>
             {/* Left */}
             <div className='flex items-center space-x-4'>
-                <img className='hidden md:inline h-10 w-10' src={songInfo?.album.images?.[0]?.url} alt="" />
+                <img className='md:inline h-10 w-10' src={songInfo?.album.images?.[0]?.url} alt="" />
                 <div>
                     <h3>{songInfo?.name} </h3>
                     <p>{songInfo?.artists?.[0]?.name} </p>
