@@ -27,7 +27,7 @@ export default function Home() {
   const onUpload = (event) => {
     console.log(event);
     const file = event.files[0].name;
-    context.setImgUrl(`https://synesound-image.fra1.cdn.digitaloceanspaces.com/${file}`);
+    localStorage.setItem( "imageUrl",`https://synesound-image.fra1.cdn.digitaloceanspaces.com/${file}`);
 
     ImgExtractor(event.files[0]).then((response) => {
       console.log(response);
@@ -43,15 +43,17 @@ export default function Home() {
 
   const router = useRouter()
   return (
-    <main className='bg-black'>
+    <main
+      style={{
+        backgroundImage: `url(${logo.src})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
       <section>
-        <div
-          style={{
-            width: "150px",
-            height: "150px",
-            backgroundImage: `url(${logo})`
-          }}
-        ></div>
         <div className="container mx-auto ">
           <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12"></div>
           <div className="flex-1 text-center font-secondary lg:text-center">
@@ -62,7 +64,7 @@ export default function Home() {
             >
               <h2>
                 <Typewriter
-                  className="text-white"
+                  className="type"
                   onInit={(typewriter) => {
                     typewriter
                       .typeString(
@@ -93,7 +95,7 @@ export default function Home() {
             {/* <Link href="/login">Click here to get Synesounded</Link> */}
 
             <div className="lg:bottom-8 w-full overflow-hidden z-50">
-              <div className="h-[370px] max-w-[500px] mx-auto px-6 flex justify-between items-center">
+              <div className="h-[370px] max-w-[600px] mx-auto px-6 center">
                 <FileUpload
                   name="demo"
                   url={"/api/upload"}
@@ -101,9 +103,28 @@ export default function Home() {
                   accept="image/*"
                   maxFileSize={10000000}
                   emptyTemplate={
-                    <p className="m-0 flex items-center justify-center text-black">
-                      Upload a picture to get it Synesounded
-                    </p>
+                    <div>
+                    <h2>
+                      <Typewriter
+                        className="type"
+                        onInit={(typewriter) => {
+                          typewriter
+                            .typeString(
+                              "Upload your picture here"
+                            )
+                            .callFunction(() => {
+                              console.log("String typed out!");
+                            })
+                            .pauseFor(2500)
+                            // .deleteAll()
+                            .callFunction(() => {
+                              // console.log('All strings were deleted');
+                            })
+                            .start();
+                        }}
+                      />
+                    </h2>
+                    </div>
                   }
                   onUpload={onUpload}
                 />
@@ -123,7 +144,6 @@ export default function Home() {
           Take me there
         </button>
       </h3>
-      <div className="h-[11vh]"></div>
     </main>
   );
 }

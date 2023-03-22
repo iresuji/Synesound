@@ -61,6 +61,7 @@ export default function Player() {
     // const [color, setColor] = useState(null);
 
     const [gradient, setGradient] = useState('linear-gradient(to bottom, #000000, #000000');
+    const [imageUrl, setImageUrl] = useState("");
 
     useEffect(() => {
         const colors = JSON.parse(localStorage.getItem('colors') || '[]');
@@ -69,6 +70,7 @@ export default function Player() {
             setGradient(`linear-gradient(to bottom, ${color}, #000000`);
         }
         console.log(colors);
+        setImageUrl(localStorage.getItem("imageUrl") || "");
         // setColor(shuffle(colors).pop());
     }, []);
 
@@ -209,7 +211,7 @@ export default function Player() {
                     >
                       <div>
                         <div className="frame-single">
-                          {context.imgUrl && (
+                          {imageUrl && (
                             <motion.img
                               style={{ scale: scale }}
                               initial={{ scale: 1 }}
@@ -217,7 +219,7 @@ export default function Player() {
                                 transition: {  ...transition },
                                 y: window.innerWidth > 1440 ? -300 : -300,
                               }}
-                              src={context.imgUrl}
+                              src={imageUrl}
                             />
                           )}
                         </div>
