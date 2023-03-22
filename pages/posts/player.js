@@ -82,9 +82,6 @@ export default function Player() {
     };
     const [canScroll, setCanScroll] = useState(false);
 
-
-
-
     const router = useRouter();
 
     return (

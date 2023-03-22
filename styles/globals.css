@@ -16,14 +16,14 @@
         h5,
         h6,
         p {
-            @apply text-white align-baseline;
+            @apply text-white align-baseline font-thin;
         }
     }
 
     button {
         @apply text-white;
     }
+    
 
 
 }
-
