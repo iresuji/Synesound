@@ -23,7 +23,52 @@
     button {
         @apply text-white;
     }
-    
 
 
 }
+
+
+span.p-button {
+    background-color: black;
+    opacity: 0.5;
+    border: white 2px solid;
+    transition-duration: 0.4s;
+    }
+    span.p-button:hover {
+    background-color: black !important;
+    opacity: 1 !important;
+    border: white 2px solid !important;
+    }
+
+    button.p-component {
+    background-color: black;
+    opacity: 0.5;
+    border: white 2px solid;
+    transition-duration: 0.4s;
+    }
+    button.p-button:hover {
+    background-color: black !important;
+    opacity: 1 !important;
+    border: white 2px solid !important;
+    }
+
+div.p-fileupload-buttonbar {
+    display: flex !important;
+    background: none !important;
+    border: none !important;
+    justify-content: center !important;
+}
+
+.Typewriter {
+    text-shadow: 2px 2px #000000;
+}
+
+div.p-fileupload {
+    border: none !important;
+}
+
+div.p-fileupload-content{
+    background: none!important;
+    border: none !important;
+}
+/* "bg-black text-white border p-2 shadow-inner rounded opacity-50 hover:opacity-100" */
