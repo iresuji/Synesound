@@ -11,7 +11,10 @@ function useSpotify() {
             if (session.error === "RefreshAccessTokenError") {
                 signIn();
             }
+            console.log(session.user);
             spotifyApi.setAccessToken(session.user.accessToken);
+            spotifyApi.setRefreshToken(session.user.refreshAccessToken);
+            console.log(spotifyApi);
         }
     }, [session]);
 
