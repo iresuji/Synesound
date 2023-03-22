@@ -23,7 +23,7 @@ function useSongInfo() {
         }
 
         fetchSongInfo();
-
+        console.log(currentIdTrack);
     }, [currentIdTrack, spotifyApi]);
 
 

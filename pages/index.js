@@ -33,6 +33,8 @@ export default function Home() {
       console.log(response);
 
       localStorage.setItem('colors', JSON.stringify(response.data.colors));
+      localStorage.setItem('search', JSON.stringify(response.data.objects[0].name));
+
       setIsButtonEnabled(true);
 
     })

@@ -63,6 +63,7 @@ export default function Player() {
     const [gradient, setGradient] = useState('linear-gradient(to bottom, #000000, #000000');
     const [imageUrl, setImageUrl] = useState("");
 
+
     useEffect(() => {
         const colors = JSON.parse(localStorage.getItem('colors') || '[]');
         if (colors.length > 0) {
