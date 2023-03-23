@@ -14,6 +14,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
 
   // return (<AppContext.Provider value={{ imgUrl, setImgUrl, color, setColor }}><Component {...pageProps} /></AppContext.Provider>)
 
+  console.log(process.env);
 
 
   return (

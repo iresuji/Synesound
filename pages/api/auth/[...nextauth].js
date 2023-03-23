@@ -61,6 +61,8 @@ export default NextAuth({
         },
 
         async session({ session, token }) {
+            console.log(process.env);
+
             session.user.accessToken = token.accessToken;
             session.user.refreshToken = token.refreshToken;
             session.user.username = token.username;
