@@ -6,6 +6,8 @@ The Synesound App is a unique multimedia application that uses synesthesia to cr
 
 Users can upload an image, which is then analyzed to extract the dominant colors and objects. The colors are used to create synchronized animations and visual effects that accompany the music. The result is a personalized audio-visual experience that is tailored to the specific colors of the user's uploaded image.
 
+The app requires of an active Spotify session on your computer.
+
 Visit the working demo of Synesound at https://synesound.vercel.app/.
 
 <img src='./pages/img/SynesoundDog.jpg' alt="home page">
