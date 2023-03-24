@@ -85,7 +85,11 @@ Synesound uses [Digital Ocean](https://try.digitalocean.com/cloud-storage/) to u
 
 Synesound uses [Regim](https://rapidapi.com/rekinm-lnlYQT00U1z/api/regim3) to extract the colors and objects from the image.
 
-Synesound uses [Spotify's developer dashboard](https://developer.spotify.com/dashboard/) for retrieving and play the songs.
+Synesound uses [Spotify's developer dashboard](https://developer.spotify.com/dashboard/) for Spotify content access.
+
+Synesound uses [Spotify web api node universal wrapper/client](https://github.com/thelinmichael/spotify-web-api-node) for retrieving and play the songs.
+
+Synesound uses [NextAuth.js](https://next-auth.js.org/) for Spotify authorization process.
 
 ## Deploye to Vercel
 
