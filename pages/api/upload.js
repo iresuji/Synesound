@@ -34,7 +34,7 @@ export default async function handler(req, res) {
                 ACL: "public-read",
             };
             const uploadResult = await s3Client.upload(uploadParams).promise();
-            const imgUrl = `https://synesound-image.fra1.cdn.digitaloceanspaces.com/${imageName}`;
+            const imgUrl = `https://synesound.fra1.cdn.digitaloceanspaces.com/${imageName}`;
             return res.status(201).json({
                 success: true,
                 message: "File uploaded successfully",
