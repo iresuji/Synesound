@@ -27,7 +27,7 @@ export default function Home() {
   const onUpload = (event) => {
     console.log(event);
     const file = event.files[0].name;
-    localStorage.setItem("imageUrl", `https://synesound.fra1.cdn.digitaloceanspaces.com/${file}`);
+    localStorage.setItem("imageUrl", `https://synesound-image.fra1.cdn.digitaloceanspaces.com/${file}`);
 
     ImgExtractor(event.files[0]).then((response) => {
       console.log(response);
