@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-const API_KEY = '75980977d5msh3aa264572f31770p12b67cjsn503a854eac7f';
+const API_KEY = '68ca58338cmsh0e5547f05cd1b4bp1fa33djsn973d3db4137f';
 
 
 const API_HOST = 'regim3.p.rapidapi.com';

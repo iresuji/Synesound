@@ -27,7 +27,7 @@ export default function Home() {
   const onUpload = (event) => {
     console.log(event);
     const file = event.files[0].name;
-    localStorage.setItem( "imageUrl",`https://synesound-image.fra1.cdn.digitaloceanspaces.com/${file}`);
+    localStorage.setItem("imageUrl", `https://synesound.fra1.cdn.digitaloceanspaces.com/${file}`);
 
     ImgExtractor(event.files[0]).then((response) => {
       console.log(response);
@@ -106,26 +106,26 @@ export default function Home() {
                   maxFileSize={10000000}
                   emptyTemplate={
                     <div>
-                    <h2>
-                      <Typewriter
-                        className="type"
-                        onInit={(typewriter) => {
-                          typewriter
-                            .typeString(
-                              "Upload your picture here"
-                            )
-                            .callFunction(() => {
-                              console.log("String typed out!");
-                            })
-                            .pauseFor(2500)
-                            // .deleteAll()
-                            .callFunction(() => {
-                              // console.log('All strings were deleted');
-                            })
-                            .start();
-                        }}
-                      />
-                    </h2>
+                      <h2>
+                        <Typewriter
+                          className="type"
+                          onInit={(typewriter) => {
+                            typewriter
+                              .typeString(
+                                "Upload your picture here"
+                              )
+                              .callFunction(() => {
+                                console.log("String typed out!");
+                              })
+                              .pauseFor(2500)
+                              // .deleteAll()
+                              .callFunction(() => {
+                                // console.log('All strings were deleted');
+                              })
+                              .start();
+                          }}
+                        />
+                      </h2>
                     </div>
                   }
                   onUpload={onUpload}
